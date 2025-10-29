@@ -1,0 +1,1422 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal Portfolio</title>
+
+  <!--
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./pictures/simo 4.jpg" type="image/x-icon">
+
+  <!--
+    - custom css link
+  -->
+  <link rel="stylesheet" href="style.css">
+
+  <!--
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function() {
+      emailjs.init("ijGbbnnr282oNYp8g");
+      console.log('EmailJS Initialized');
+    })();
+  </script>
+  <style>
+    .form-feedback {
+      margin-top: 15px;
+      padding: 10px;
+      border-radius: 5px;
+      display: none;
+    }
+    .form-feedback.success {
+      display: block;
+      background-color: #d4edda;
+      color: #155724;
+      border: 1px solid #c3e6cb;
+    }
+    .form-feedback.error {
+      display: block;
+      background-color: #f8d7da;
+      color: #721c24;
+      border: 1px solid #f5c6cb;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!--
+    - #MAIN
+  -->
+
+  <main>
+
+    <!--
+      - #SIDEBAR
+    -->
+
+    <aside class="sidebar" data-sidebar>
+
+      <div class="sidebar-info">
+
+        <figure class="avatar-box">
+          <img src="./images/head only.jpg" alt="Simon Ngwili" width="80">
+        </figure>
+
+        <div class="info-content">
+          <h1 class="name" title="Richard hanrick">Simon Ngwili</h1>
+
+          <p class="title">Data Scientist/Analyst</p>
+        </div>
+
+        <button class="info_more-btn" data-sidebar-btn>
+          <span>Show Contacts</span>
+
+          <ion-icon name="chevron-down"></ion-icon>
+        </button>
+
+      </div>
+
+      <div class="sidebar-info_more">
+
+        <div class="separator"></div>
+
+        <ul class="contacts-list">
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="mail-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Email</p>
+
+              <a href="mailto:simo.kazini58@gmail.com" class="contact-link">Send Email</a>
+            </div>
+
+          </li>
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="phone-portrait-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Phone</p>
+
+              <a href="tel:+254790186558" class="contact-link">CALL ME</a>
+            </div>
+
+          </li>
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="calendar-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Birthday</p>
+
+              <time datetime="2004-09-22">September 22, 2004</time>
+            </div>
+
+          </li>
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="location-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Location</p>
+
+              <address>Kirinyaga University, Kenya</address>
+            </div>
+          </li>
+            <li class="contact-item">
+
+              <div class="icon-box">
+                <ion-icon name="phone-portrait-outline"></ion-icon>
+              </div>
+  
+              <div class="contact-info">
+                <p class="contact-title">CURRICULUM VITAE</p>
+  
+                <a href="./images/cv .docx" class="contact-link">Download CV</a>
+              </div>
+  
+           
+
+          </li>
+
+        </ul>
+
+        <div class="separator"></div>
+
+        <ul class="social-list">
+
+          <li class="social-item">
+            <a href="#" class="social-link">
+              <ion-icon class = "socials-icons" name="logo-facebook"></ion-icon>
+              <span class="social-text">Facebook</span>
+            </a>
+          </li>
+
+          <li class="social-item">
+            <a href="#" class="social-link">
+              <ion-icon class = "socials-icons" name="logo-twitter"></ion-icon>
+              <span class="social-text">Twitter</span>
+            </a>
+          </li>
+
+          <li class="social-item">
+            <a href="#" class="social-link">
+              <ion-icon class = "socials-icons" name="logo-instagram"></ion-icon>
+              <span class="social-text">Instagram</span>
+            </a>
+          </li>
+
+    </aside>
+
+
+
+
+
+    <!--
+      - #main-content
+    -->
+
+    <div class="main-content">
+
+      <!--
+        - #NAVBAR
+      -->
+
+      <nav class="navbar">
+
+        <ul class="navbar-list">
+
+          <li class="navbar-item">
+            <button class="navbar-link  active" data-nav-link data-target="about">About</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link data-target="resume">Resume</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link data-target="portfolio">Portfolio</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link data-target="gallery">Gallery</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link data-target="contact">Contact</button>
+          </li>
+
+         
+        </ul>
+
+      </nav>
+
+
+
+
+
+      <!--
+        - #ABOUT
+      -->
+
+      <article class="about  active" data-page="about">
+
+        <header>
+          <h2 class="h2 article-title">About me</h2>
+        </header>
+
+        <section class="about-text">
+          <p>
+            I'm a Data Scientist and Analyst based in Nairobi, Kenya, passionate about transforming raw data into meaningful insights. 
+           I enjoy turning complex datasets and analytical challenges into clear, actionable solutions that drive business growth and innovation.
+          </p>
+
+          
+ <p>
+          My job is to turn raw data into actionable insights that drive decision-making and innovation. 
+            I specialize in collecting, analyzing, and visualizing complex datasets to uncover trends and patterns. 
+            My goal is to help organizations make data-driven decisions by presenting information in a clear and meaningful way. 
+            I have worked on projects ranging from business analytics to predictive modeling for various industries.
+            </p>
+        </section>
+
+
+        <!--
+          - service
+        -->
+
+        <section class="service">
+
+          <h3 class="h3 service-title">What i'm doing</h3>
+
+          <ul class="service-list">
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <img src="./images/icon-design.svg
+                " alt="design icon" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Data science</h4>
+
+                <p class="service-item-text">
+                   I apply advanced data science techniques and analytical methods to deliver accurate, actionable insights at a professional level.
+                
+                </p>
+              </div>
+
+            </li>
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <img src="./images/icon-dev.svg" alt="Web development icon" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Data Analytics</h4>
+
+                <p class="service-item-text">
+                  High-quality data analytics, dashboards, and actionable insights delivered at a professional level.
+                </p>
+              </div>
+
+            </li>
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <img src="./images/machine learning.png" alt="mobile app icon" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Machine learning engineer</h4>
+
+                <p class="service-item-text">
+                  Design, train, and deploy production-ready machine learning models; build data pipelines, implement model evaluation and monitoring, and deliver scalable ML solutions using Python, scikit-learn, TensorFlow/PyTorch, Docker, and cloud platforms.
+                </p>
+              </div>
+
+            </li>
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <img src="./images/it support avatar.png" alt="camera icon" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">IT Technician / Support</h4>
+                <p class="service-item-text">
+                  Provide professional IT support: troubleshoot hardware and software issues, set up and maintain networks and workstations, perform system backups and updates, and assist users to keep systems secure and running smoothly.
+                </p>
+              </div>
+
+            </li>
+
+          </ul>
+
+        </section>
+
+
+        <!--
+          - testimonials
+        -->
+
+        <section class="testimonials">
+
+          <h3 class="h3 testimonials-title">Testimonials</h3>
+
+          <ul class="testimonials-list has-scrollbar">
+
+            <li class="testimonials-item">
+              <div class="content-card" data-testimonials-item>
+
+                <figure class="testimonials-avatar-box">
+                  <img src="./images/avatar-1.png" alt="Daniel lewis" width="60" data-testimonials-avatar>
+                </figure>
+
+                <h4 class="h4 testimonials-item-title" data-testimonials-title>Kelvin Sangutei</h4>
+
+                <div class="testimonials-text" data-testimonials-text>
+                  <p>
+                  Simon was hired to create a corporate identity. We were very pleased with the work done. He has a
+                    lot of experience
+                    
+                  
+                  </p>
+                </div>
+
+              </div>
+            </li>
+
+            <li class="testimonials-item">
+              <div class="content-card" data-testimonials-item>
+
+                <figure class="testimonials-avatar-box">
+                  <img src="./images/avatar-2.png" alt="Jessica miller" width="60" data-testimonials-avatar>
+                </figure>
+
+                <h4 class="h4 testimonials-item-title" data-testimonials-title>Cyrus Ogeto</h4>
+
+                <div class="testimonials-text" data-testimonials-text>
+                  <p>
+                    Simon was hired to analyze business data. We were very pleased with the work done. He has a
+                    lot of experience
+                    and is very concerned about the needs of client. 
+                  </p>
+                </div>
+
+              </div>
+            </li>
+
+            <li class="testimonials-item">
+              <div class="content-card" data-testimonials-item>
+
+                <figure class="testimonials-avatar-box">
+                  <img src="./images/avatar-3.png" alt="Emily evans" width="60" data-testimonials-avatar>
+                </figure>
+
+                <h4 class="h4 testimonials-item-title" data-testimonials-title>Steve Ajuma</h4>
+
+                <div class="testimonials-text" data-testimonials-text>
+                  <p>
+                   Simon was hired to analyze our business data and provide actionable insights. 
+               We were impressed by his professionalism and attention to detail.
+                His expertise helped us make informed decisions and improve our overall performance.
+                  </p>
+                </div>
+
+              </div>
+            </li>
+
+            <li class="testimonials-item">
+              <div class="content-card" data-testimonials-item>
+
+                <figure class="testimonials-avatar-box">
+                  <img src="./images/avatar-4.png" alt="Henry william" width="60" data-testimonials-avatar>
+                </figure>
+
+                <h4 class="h4 testimonials-item-title" data-testimonials-title>Kennedy Mutinda Mzae</h4>
+
+                <div class="testimonials-text" data-testimonials-text>
+                  <p>
+                      Simon was hired to analyze our business data and provide actionable insights. 
+               We were impressed by his professionalism and attention to detail.
+                His expertise helped us make informed decisions and improve our overall performance.
+                  </p>
+                </div>
+
+              </div>
+            </li>
+
+          </ul>
+
+        </section>
+
+
+        <!--
+          - testimonials modal
+        -->
+
+        <div class="modal-container" data-modal-container>
+
+          <div class="overlay" data-overlay></div>
+
+          <section class="testimonials-modal">
+
+            <button class="modal-close-btn" data-modal-close-btn>
+              <ion-icon name="close-outline"></ion-icon>
+            </button>
+
+            <div class="modal-img-wrapper">
+              <figure class="modal-avatar-box">
+                <img src=".//images/avatar-1.png" alt="Daniel lewis" width="80" data-modal-img>
+              </figure>
+
+              <img src=".//images/icon-quote.svg" alt="quote icon">
+            </div>
+
+            <div class="modal-content">
+
+              <h4 class="h3 modal-title" data-modal-title>Mama milka</h4>
+
+              <time datetime="2021-06-14">14 June, 2021</time>
+
+              <div data-modal-text>
+                <p>
+                 Joram was hired to create a corporate identity. We were very pleased with the work done. She has a
+                  lot of experience
+                  and is very concerned about the needs of client. 
+                </p>
+              </div>
+
+            </div>
+
+          </section>
+
+        </div>
+
+
+        <!--
+          - clients
+        -->
+
+        <section class="clients">
+
+          <h3 class="h3 clients-title">Clients</h3>
+
+          <ul class="clients-list has-scrollbar">
+
+            <li class="clients-item">
+              <a href="#">
+                <img src=".//images/logo-1-color.png" alt="client logo">
+              </a>
+            </li>
+
+            <li class="clients-item">
+              <a href="#">
+                <img src=".//images/logo-2-color.png" alt="client logo">
+              </a>
+            </li>
+
+            <li class="clients-item">
+              <a href="#">
+                <img src=".//images/logo-3-color.png" alt="client logo">
+              </a>
+            </li>
+
+            <li class="clients-item">
+              <a href="#">
+                <img src=".//images/logo-4-color.png" alt="client logo">
+              </a>
+            </li>
+
+            <li class="clients-item">
+              <a href="#">
+                <img src=".//images/logo-5-color.png" alt="client logo">
+              </a>
+            </li>
+
+            <li class="clients-item">
+              <a href="#">
+                <img src=".//images/logo-6-color.png" alt="client logo">
+              </a>
+            </li>
+
+          </ul>
+
+        </section>
+
+      </article>
+
+
+
+
+
+      <!--
+        - #RESUME
+      -->
+
+      <article class="resume" data-page="resume">
+
+        <header>
+          <h2 class="h2 article-title">Resume</h2>
+        </header>
+
+        <section class="timeline">
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="book-outline"></ion-icon>
+            </div>
+
+            <h3 class="h3">Education</h3>
+          </div>
+
+          <ol class="timeline-list">
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Kirinyaga University</h4>
+
+              <span>2023 — Present</span>
+
+              <p class="timeline-text">
+                Am currently pursuing a degree in computer science at Kirinyaga University. <br>
+                Kirinyaga University is a public university in Kirinyaga county, Kenya. My expected graduation date is 2027.
+              </p>
+
+            </li>
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Kitondo Boys' High school</h4>
+
+              <span>2019 — 2022</span>
+
+              <p class="timeline-text">
+                I attended Kitondo school for my secondary school education where I graduated at 2022 with a <b>B plain</b> grade. <br>
+                Kitondo Boys High school is an extra county school in Makueni county, Kenya
+
+
+            </li>
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Mikuyu Primary School</h4>
+
+              <span>2010 — 2018</span>
+
+              <p class="timeline-text">
+                 But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain
+                 was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth,
+                  the master-builder of human happiness.
+
+            </li>
+
+          </ol>
+
+        </section>
+
+        <section class="timeline">
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="book-outline"></ion-icon>
+            </div>
+
+            <h3 class="h3">Experience</h3>
+          </div>
+
+          <ol class="timeline-list">
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Communication skills</h4>
+
+              <span>2015 — Present</span>
+
+              <p class="timeline-text">
+                 I am able to clearly explain complex data findings to both technical and non-technical audiences, ensuring that insights are understood and actionable by all stakeholders.
+
+              </p>
+
+            </li>
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Data analyst</h4>
+
+              <span>2024 — 2025</span>
+
+              <p class="timeline-text">
+              I have been involved in analyzing and interpreting complex datasets to provide actionable insights for organizations. 
+              My experience includes building data-driven solutions, creating interactive dashboards, and using statistical and machine learning techniques to solve real-world business problems.
+              </p>
+
+            </li>
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">IT support</h4>
+
+              <span>2023— 2024</span>
+
+              <p class="timeline-text">
+              Provided IT support including troubleshooting hardware and software issues, configuring and maintaining networks and workstations, performing system backups and updates, and assisting users to ensure reliable and secure daily operations.
+
+            </li>
+
+          </ol>
+
+        </section>
+
+        <section class="skill">
+
+          <h3 class="h3 skills-title">My skills</h3>
+
+          <ul class="skills-list content-card">
+
+            <li class="skills-item">
+
+              <div class="title-wrapper">
+                <h5 class="h5">Data Cleaning</h5>
+                <data value="90">90%</data>
+              </div>
+
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 80%;"></div>
+              </div>
+
+            </li>
+
+            <li class="skills-item">
+
+              <div class="title-wrapper">
+                <h5 class="h5">Data Visualization</h5>
+                <data value="70">70%</data>
+              </div>
+
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 70%;"></div>
+              </div>
+
+            </li>
+
+            <li class="skills-item">
+
+              <div class="title-wrapper">
+                <h5 class="h5">IT Support</h5>
+                <data value="90">90%</data>
+              </div>
+
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 90%;"></div>
+              </div>
+
+            </li>
+
+            <li class="skills-item">
+
+              <div class="title-wrapper">
+                <h5 class="h5">Machine Learning</h5>
+                <data value="50">50%</data>
+              </div>
+                <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 50%;"></div>
+              </div>
+
+            </li>
+
+            <li class="skills-item">
+
+              <div class="title-wrapper">
+              <h5 class="h5">SQL & Databases</h5>
+           <data value="90">90%</data>
+              </div>
+          <div class="skill-progress-bg">
+          <div class="skill-progress-fill" style="width: 80%;"></div>
+          </div>
+         </li>
+       <li class="skills-item">
+        <div class="title-wrapper">
+         <h5 class="h5">Python  libraries/Programming</h5>
+         <data value="85">85%</data>
+        </div>
+        <div class="skill-progress-bg">
+        <div class="skill-progress-fill" style="width: 85%;"></div>
+          </div>
+           </li>
+
+              <!-- <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 50%;"></div>
+              </div>
+
+            </li> -->
+
+          </ul>
+
+        </section>
+
+      </article>
+
+
+
+
+
+      <!--
+        - #PORTFOLIO
+      -->
+
+      <article class="portfolio" data-page="portfolio">
+
+        <header>
+          <h2 class="h2 article-title">Portfolio</h2>
+        </header>
+
+        <section class="projects">
+
+          <ul class="filter-list">
+
+            <li class="filter-item">
+              <button class="active" data-filter-btn>All</button>
+            </li>
+
+            <li class="filter-item">
+              <button data-filter-btn>Data Analytics</button>
+            </li>
+
+            <li class="filter-item">
+              <button data-filter-btn>Machine Learning</button>
+            </li>
+
+            <li class="filter-item">
+              <button data-filter-btn>Dashboard development</button>
+            </li>
+
+          </ul>
+
+          <div class="filter-select-box">
+
+            <button class="filter-select" data-select>
+
+              <div class="select-value" data-selecct-value>Select category</div>
+
+              <div class="select-icon">
+                <ion-icon name="chevron-down"></ion-icon>
+              </div>
+
+            </button>
+
+            <ul class="select-list">
+
+              <li class="select-item">
+                <button data-select-item>All</button>
+              </li>
+
+              <li class="select-item">
+                <button data-select-item>Data Analytics</button>
+              </li>
+
+              <li class="select-item">
+                <button data-select-item>Machine Learning</button>
+              </li>
+
+              <li class="select-item">
+                <button data-select-item>Dashboard development</button>
+              </li>
+
+            </ul>
+
+          </div>
+
+          <ul class="project-list">
+
+            <li class="project-item  active" data-filter-item data-category="Dashboard development">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./images/project-1.jpg" alt="finance" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Finance</h3>
+
+                <p class="project-category">Dashboard Development</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="Dashboard development">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./images/project-2.png" alt="orizon" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Orizon</h3>
+
+                <p class="project-category">Dashboard Development</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="Data Analytics">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="/images/project-3.jpg" alt="fundo" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Fundo</h3>
+
+                <p class="project-category">Data Analytics</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="Machine learning">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="/images/project-4.png" alt="brawlhalla" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Brawlhalla</h3>
+
+                <p class="project-category">Machine learning</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="Dashboard Development">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./images/project-5.png" alt="dsm." loading="lazy">
+                </figure>
+
+                <h3 class="project-title">DSM.</h3>
+
+                <p class="project-category">Dashboard Development</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="Data Analytics">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="/images/project-6.png" alt="metaspark" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">MetaSpark</h3>
+
+                <p class="project-category">Data Analytics</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="Data Analytics">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="images/project-7.png" alt="summary" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Summary</h3>
+
+                <p class="project-category">Data Analytics</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="Machine Learning">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="/images/project-8.jpg" alt="task manager" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Task Manager</h3>
+
+                <p class="project-category">Machine Learning</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="Machine Learning">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="images/project-9.png" alt="arrival" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Arrival</h3>
+
+                <p class="project-category">Machine Learning</p>
+
+              </a>
+            </li>
+
+          </ul>
+
+        </section>
+
+      </article>
+
+
+
+
+
+      <!--
+        - #gallery
+      -->
+
+      <article class="gallery" data-page="gallery">
+
+        <header>
+          <h2 class="h2 article-title">Gallery</h2>
+        </header>
+
+        <section class="gallery-posts">
+
+          <ul class="gallery-posts-list">
+
+            <li class="gallery-post-item">
+              <a href="./images/kaselfie.jpg" target="_parent">
+
+                <figure class="gallery-banner-box img-pos-5">
+                  <img src="./images/kaselfie.jpg" alt="Design conferences in 2022" loading="lazy">
+                </figure>
+
+                <div class="gallery-content">
+
+                  <div class="gallery-meta">
+                    <p class="gallery-category">Design</p>
+
+                    <span class="dot"></span>
+
+                    <time datetime="2022-02-23">Feb 23, 2025</time>
+                  </div>
+
+                  <h3 class="h3 gallery-item-title">Embracing positivity</h3>
+
+                  <p class="gallery-text">
+                   The ability and positivity you embrace even in your hard times hoping that one day things gonna be okay.
+                  </p>
+
+                </div>
+
+              </a>
+            </li>
+
+            <li class="gallery-post-item">
+              <a href="./images/alex.jpg" target="_parent">
+
+                <figure class="gallery-banner-box img-pos-top">
+                  <img src="./images/alex.jpg" alt="Best fonts every designer" loading="lazy">
+                </figure>
+
+                <div class="gallery-content">
+
+                  <div class="gallery-meta">
+                    <p class="gallery-category">Design</p>
+
+                    <span class="dot"></span>
+
+                    <time datetime="2022-02-23">Jan 23, 2025</time>
+                  </div>
+
+                  <h3 class="h3 gallery">Always embracing a smile irregaldless of the challenges.</h3>
+
+                  <p class="gallery-text">
+                    One of the days I shall acquire my very own machine by faith which moves mountains .
+                  </p>
+
+                </div>
+
+              </a>
+            </li>
+
+            <li class="gallery-post-item">
+              <a href="./images/sharo.jpg" target="_parent">
+
+                <figure class="gallery-banner-box img-pos-10-35">
+                  <img src="./images/sharo.jpg" alt="Design digest #80" loading="lazy">
+                </figure>
+
+                <div class="gallery-content">
+
+                  <div class="gallery-meta">
+                    <p class="gallery-category">Design</p>
+
+                    <span class="dot"></span>
+
+                    <time datetime="2022-02-23">Aug 23, 2023</time>
+                  </div>
+
+                  <h3 class="h3 gallery-item-title">Editing practice</h3>
+
+                  <p class="gallery-text">
+                    Was just trying to learn how to edit photos long time ago before joining campus. Was fun though.
+                  </p>
+
+                </div>
+
+              </a>
+            </li>
+
+            <li class="gallery-post-item">
+              <a href="./images/mdosi gown.jpg 1.jpg" target="_parent">
+
+                <figure class="gallery-banner-box img-pos-12-25">
+                  <img src="./images/mdosi gown.jpg" alt="UI interactions of the week" loading="lazy">
+                </figure>
+
+                <div class="gallery-content">
+
+                  <div class="gallery-meta">
+                    <p class="gallery-category">Design</p>
+
+                    <span class="dot"></span>
+
+                    <time datetime="2022-02-23">Fab 23, 2022</time>
+                  </div>
+
+                  <h3 class="h3 gallery-item-title">Gown feeling</h3>
+
+                  <p class="gallery-text">
+                    Back in 2024 after my close friend graduated and i had to borrow the gown for the feeling
+                  </p>
+
+                </div>
+
+              </a>
+            </li>
+
+            <li class="gallery-post-item">
+              <a href="./images/brighton.jpg" target="_parent">
+
+                <figure class="gallery-banner-box img-pos-8-15">
+                  <img src="./images/brighton.jpg" alt="The forgotten art of spacing" loading="lazy">
+                </figure>
+
+                <div class="gallery-content">
+
+                  <div class="gallery-meta">
+                    <p class="gallery-category">Design</p>
+
+                    <span class="dot"></span>
+
+                    <time datetime="2022-02-23">Jan 23, 2025</time>
+                  </div>
+
+                  <h3 class="h3 gallery-item-title">No caption for This</h3>
+
+                  <p class="gallery-text">
+                  Just chilling with my friends at brighton beach.
+                  </p>
+
+                </div>
+
+              </a>
+            </li>
+
+            <li class="gallery-post-item">
+              <a href="./images/y1.jpg" target="_parent">
+
+                <figure class="gallery-banner-box img-pos-5-12">
+                  <img src="./images/y1.jpg" alt="Design digest #79" loading="lazy">
+                </figure>
+
+                <div class="gallery-content">
+
+                  <div class="gallery-meta">
+                    <p class="gallery-category">Design</p>
+
+                    <span class="dot"></span>
+
+                    <time datetime="2022-02-23">Mar 08, 2025</time>
+                  </div>
+
+                  <h3 class="h3 gallery-item-title">A pure fresher mindset</h3>
+
+                  <p class="gallery-text">
+                    Just a random photo taken during my fresher days at Kirinyaga University.
+                    It was a great experience.
+                  </p>
+
+                </div>
+
+              </a>
+            </li>
+
+           
+      
+                  <li class="gallery-post-item">
+                    <a href="./images/roro siuu.jpg" target="_parent">
+      
+                      <figure class="gallery-banner-box img-pos-18-22">
+                        <img src="./images/roro siuu.jpg" alt="Design conferences in 2022" loading="lazy">
+                      </figure>
+      
+                      <div class="gallery-content">
+      
+                        <div class="gallery-meta">
+                          <p class="gallery-category">Design</p>
+      
+                          <span class="dot"></span>
+      
+                          <time datetime="2022-02-23">Feb 12, 2025</time>
+                        </div>
+      
+                        <h3 class="h3 gallery-item-title">Roro siuuu </h3>
+      
+                        <p class="gallery-text">
+                     I had to take this photo after attending a football match where my favorite team won.
+                     We call him roro siuuu because of his celebration style.
+                     The real goat
+                        </p>
+      
+                      </div>
+      
+                    </a>
+                  </li>
+      
+                  <li class="gallery-post-item">
+                    <a href="./pictures/simo2.jpg" target="_parent">
+      
+                      <figure class="gallery-banner-box img-pos-15-20">
+                        <img src="./pictures/simo2.jpg" alt="Best fonts every designer" loading="lazy">
+                      </figure>
+      
+                      <div class="gallery-content">
+      
+                        <div class="gallery-meta">
+                          <p class="gallery-category">Design</p>
+      
+                          <span class="dot"></span>
+      
+                          <time datetime="2024-11-09">Nov 11, 2024</time>
+                        </div>
+      
+                        <h3 class="h3 gallery">A hackerthon for building a website</h3>
+      
+                        <p class="gallery-text">
+                          Meditating after a long day of building a website during a hackerthon event at Kirinyaga university.
+                          Thinking of some error bugs😂
+                          </p>
+      
+                      </div>
+      
+                    </a>
+                  </li>
+      
+                  <li class="gallery-post-item">
+                    <a href="./images/edired back.jpg" target="_top">
+      
+                      <figure class="gallery-banner-box img-pos-10-20">
+                        <img src="./images/edired back.jpg" alt="Design digest #80" loading="lazy">
+                      </figure>
+      
+                      <div class="gallery-content">
+      
+                        <div class="gallery-meta">
+                          <p class="gallery-category">Design</p>
+      
+                          <span class="dot"></span>
+      
+                          <time datetime="2006-11-04">Nov 04, 2006</time>
+                        </div>
+      
+                        <h3 class="h3 gallery-item-title">Nice days</h3>
+      
+                        <p class="gallery-text">
+                    Good vibes only. Living each moment with happiness and enjoying my 2.1 semester at kirinyaga university.
+
+                        </p>
+      
+                      </div>
+      
+                    </a>
+                  </li>
+      
+                  <li class="gallery-post-item">
+                    <a href="./pictures/simon 1.jpg" target="_self">
+      
+                      <figure class="gallery-banner-box img-pos-15-30">
+                        <img src="./pictures/simon 1.jpg" alt="UI interactions of the week" loading="lazy">
+                      </figure>
+      
+                      <div class="gallery-content">
+      
+                        <div class="gallery-meta">
+                          <p class="gallery-category">Design</p>
+      
+                          <span class="dot"></span>
+      
+                          <time datetime="2024-11-10">Nov 10, 2024</time>
+                        </div>
+      
+                        <h3 class="h3 gallery-item-title">After sunday service</h3>
+      
+                        <p class="gallery-text">
+                            Praise to God for enabling me to attend the Sunday service and worship with my fellow brothers and sisters at Kirinyaga University. What a blessed day it was! 🙏
+                        </p>
+      
+                      </div>
+      
+                    </a>
+                  </li>
+      
+                  <li class="gallery-post-item">
+                    <a href="./pictures/simo 5.jpg" target="_self">
+
+                      <figure class="gallery-banner-box img-pos-5">
+                        <img src="./pictures/simo 5.jpg" alt="The forgotten art of spacing" loading="lazy">
+                      </figure>
+
+                      <div class="gallery-content">                        <div class="gallery-meta">
+                          <p class="gallery-category">Design</p>
+      
+                          <span class="dot"></span>
+      
+                          <time datetime="2022-02-23">Nov 10, 2024</time>
+                        </div>
+      
+                        <h3 class="h3 gallery-item-title">Game mode on/off</h3>
+      
+                        <p class="gallery-text">
+                          attending a manchester united match at the podium was a great experience. The atmosphere, the energy, and the passion of the fans made it an unforgettable day.
+                        </p>
+      
+                      </div>
+      
+                    </a>
+                  </li>
+      
+                  <li class="gallery-post-item">
+                    <a href="./images/alex.jpg" target="_self">
+
+                      <figure class="gallery-banner-box img-pos-5">
+                        <img src="./images/alex.jpg" alt="Design digest #79" loading="lazy">
+                      </figure>
+
+                      <div class="gallery-content">
+                        <div class="gallery-meta">
+                          <p class="gallery-category">Design</p>
+
+                          <span class="dot"></span>
+
+                          <time datetime="2022-02-23">March 08, 2025</time>
+                        </div>
+
+                        <h3 class="h3 gallery-item-title">Peace of mind</h3>
+
+                        <p class="gallery-text">
+                          Just decided to take a nap and break from my normal routine just to rejuvinate my brain.
+                        </p>
+
+                      </div>
+
+                    </a>
+                  </li>
+          </ul>
+
+        </section>
+
+      </article>
+
+
+
+
+
+      <!--
+        - #CONTACT
+      -->
+
+      <article class="contact" data-page="contact">
+
+        <header>
+          <h2 class="h2 article-title">Contact</h2>
+        </header>
+
+        <section class="mapbox" data-mapbox>
+          <figure>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.6234789863347!2d37.31768627349651!3d-0.5662437352599647!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182629b5a37f6381%3A0x859cebe37dc37639!2sKirinyaga%20University!5e0!3m2!1sen!2ske!4v1742294260216!5m2!1sen!2ske" 
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </figure>
+        </section>
+
+        <section class="contact-form">
+
+          <h3 class="h3 form-title">Contact Form</h3>
+        
+          <form action="#" class="form" data-form id="contactForm">
+        
+            <div class="input-wrapper">
+              <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input aria-label="Full name">
+              <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input aria-label="Email address">
+            </div>
+        
+            <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
+            
+            <button class="form-btn" type="submit" data-form-btn id="submitBtn">
+              <ion-icon name="paper-plane"></ion-icon>
+              <span>Send Message</span>
+            </button>
+        
+          </form>
+      
+          <div id="form-feedback" class="form-feedback"></div>
+        
+        </section>
+
+      </article>
+
+    </div>
+
+  </main>
+
+   
+
+</article>
+
+
+
+  <!--
+    - custom js link
+  -->
+  <script src="script.js"></script>
+
+  <!--
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>

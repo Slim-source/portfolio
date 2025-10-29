@@ -1,0 +1,357 @@
+'use strict';
+
+
+
+// element toggle function
+const elementToggleFunc = function (elem) { elem.classList.toggle("active"); }
+
+
+
+// sidebar variables
+const sidebar = document.querySelector("[data-sidebar]");
+const sidebarBtn = document.querySelector("[data-sidebar-btn]");
+
+// sidebar toggle functionality for mobile
+if (sidebarBtn) {
+  sidebarBtn.addEventListener("click", function () { elementToggleFunc(sidebar); });
+} else {
+  console.warn('Warning: [data-sidebar-btn] not found');
+}
+
+
+
+// testimonials variables
+const testimonialsItem = document.querySelectorAll("[data-testimonials-item]");
+const modalContainer = document.querySelector("[data-modal-container]");
+const modalCloseBtn = document.querySelector("[data-modal-close-btn]");
+const overlay = document.querySelector("[data-overlay]");
+
+// modal variable
+const modalImg = document.querySelector("[data-modal-img]");
+const modalTitle = document.querySelector("[data-modal-title]");
+const modalText = document.querySelector("[data-modal-text]");
+
+// modal toggle function
+const testimonialsModalFunc = function () {
+  modalContainer.classList.toggle("active");
+  overlay.classList.toggle("active");
+}
+
+// add click event to all modal items
+for (let i = 0; i < testimonialsItem.length; i++) {
+
+  testimonialsItem[i].addEventListener("click", function () {
+
+    modalImg.src = this.querySelector("[data-testimonials-avatar]").src;
+    modalImg.alt = this.querySelector("[data-testimonials-avatar]").alt;
+    modalTitle.innerHTML = this.querySelector("[data-testimonials-title]").innerHTML;
+    modalText.innerHTML = this.querySelector("[data-testimonials-text]").innerHTML;
+
+    testimonialsModalFunc();
+
+  });
+
+}
+
+// add click event to modal close button
+if (modalCloseBtn) {
+  modalCloseBtn.addEventListener("click", testimonialsModalFunc);
+} else {
+  console.warn('Warning: [data-modal-close-btn] not found');
+}
+if (overlay) {
+  overlay.addEventListener("click", testimonialsModalFunc);
+} else {
+  console.warn('Warning: [data-overlay] not found');
+}
+
+
+
+// custom select variables
+const select = document.querySelector("[data-select]");
+const selectItems = document.querySelectorAll("[data-select-item]");
+const selectValue = document.querySelector("[data-selecct-value]");
+const filterBtn = document.querySelectorAll("[data-filter-btn]");
+
+if (select) {
+  select.addEventListener("click", function () { elementToggleFunc(this); });
+} else {
+  console.warn('Warning: [data-select] not found');
+}
+
+// add event in all select items
+for (let i = 0; i < selectItems.length; i++) {
+  selectItems[i].addEventListener("click", function () {
+
+    let selectedValue = this.innerText.toLowerCase();
+    selectValue.innerText = this.innerText;
+    elementToggleFunc(select);
+    filterFunc(selectedValue);
+
+  });
+}
+
+// filter variables
+const filterItems = document.querySelectorAll("[data-filter-item]");
+
+const filterFunc = function (selectedValue) {
+  selectedValue = selectedValue.toLowerCase();
+
+  for (let i = 0; i < filterItems.length; i++) {
+    const category = filterItems[i].dataset.category.toLowerCase();
+
+    if (selectedValue === "all") {
+      filterItems[i].classList.add("active");
+    } else if (selectedValue === category) {
+      filterItems[i].classList.add("active");
+    } else {
+      filterItems[i].classList.remove("active");
+    }
+  }
+}
+
+// add event in all filter button items for large screen
+let lastClickedBtn = filterBtn[0];
+
+for (let i = 0; i < filterBtn.length; i++) {
+
+  filterBtn[i].addEventListener("click", function () {
+
+    let selectedValue = this.innerText.toLowerCase();
+    selectValue.innerText = this.innerText;
+    filterFunc(selectedValue);
+
+    lastClickedBtn.classList.remove("active");
+    this.classList.add("active");
+    lastClickedBtn = this;
+
+  });
+
+}
+
+
+
+// contact form variables
+const form = document.querySelector("[data-form]");
+const formInputs = document.querySelectorAll("[data-form-input]");
+const formBtn = document.querySelector("[data-form-btn]");
+
+// add event to all form input field
+for (let i = 0; i < formInputs.length; i++) {
+  formInputs[i].addEventListener("input", function () {
+
+    // check form validation
+    if (form.checkValidity()) {
+      formBtn.removeAttribute("disabled");
+    } else {
+      formBtn.setAttribute("disabled", "");
+    }
+
+  });
+}
+
+
+
+// page navigation variables
+const navigationLinks = document.querySelectorAll("[data-nav-link]");
+const pages = document.querySelectorAll("[data-page]");
+
+// add event to all navigation link
+for (let i = 0; i < navigationLinks.length; i++) {
+  navigationLinks[i].addEventListener("click", function () {
+
+    for (let i = 0; i < pages.length; i++) {
+      if (this.textContent.toLowerCase() === pages[i].dataset.page) {
+        pages[i].classList.add("active");
+        navigationLinks[i].classList.add("active");
+        window.scrollTo(0, 0);
+      } else {
+        pages[i].classList.remove("active");
+        navigationLinks[i].classList.remove("active");
+      }
+    }
+
+  });
+}
+  const form = document.querySelector('[data-form]');
+  const feedback = document.getElementById('form-feedback');
+  const submitBtn = document.getElementById('submitBtn');
+
+  form.addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    // Clear previous feedback
+    feedback.textContent = '';
+    feedback.classList.remove('success', 'error');
+    feedback.style.display = 'none';
+
+    // Get form data
+    const formData = new FormData(form);
+    const fullname = formData.get('fullname');
+    const email = formData.get('email');
+    const message = formData.get('message');
+
+    // Simple validation
+    if (!fullname || !email || !message) {
+      feedback.textContent = 'Please fill in all fields.';
+      feedback.classList.add('error');
+      feedback.style.display = 'block';
+      return;
+    }
+
+    // Disable submit button and show loading state
+    submitBtn.disabled = true;
+    submitBtn.querySelector('span').textContent = 'Sending...';
+
+    // Send email using EmailJS
+    // Get current timestamp
+    const timestamp = new Date().toISOString();
+    
+    // Create log entry for this message
+    const emailLog = {
+      timestamp: timestamp,
+      sender: {
+        name: fullname,
+        email: email
+      },
+      messagePreview: message.substring(0, 100) + (message.length > 100 ? '...' : ''),
+      status: 'sending'
+    };
+
+    // Log to console
+    console.log('📧 New message attempt:', emailLog);
+
+    // Prepare email data with logging information
+    const emailData = {
+      from_name: fullname,
+      from_email: email,
+      message: message,
+      to_name: 'Simon Ngwili',
+      to_email: 'simo.kazini58@gmail.com',
+      timestamp: timestamp,
+      log_id: Date.now().toString(), // Unique ID for tracking
+      browser: navigator.userAgent,
+      page_url: window.location.href
+    };
+
+    console.log('✉️ Sending email with:', emailData);
+
+    emailjs.send(
+      'service_57bmll9',
+      'template_thsfczn',
+      emailData
+    ).then(
+      function(response) {
+        // Log successful sending
+        console.log('✅ Email sent successfully:', {
+          messageId: response.messageId,
+          status: 'sent',
+          timestamp: new Date().toISOString(),
+          response: response
+        });
+
+        // Store in localStorage for tracking
+        try {
+          const sentEmails = JSON.parse(localStorage.getItem('sentEmails') || '[]');
+          sentEmails.push({
+            timestamp: new Date().toISOString(),
+            status: 'sent',
+            messageId: response.messageId,
+            sender: email
+          });
+          localStorage.setItem('sentEmails', JSON.stringify(sentEmails));
+        } catch (e) {
+          console.warn('Could not store email log:', e);
+        }
+
+        feedback.textContent = 'Message sent successfully! I will get back to you soon.';
+        feedback.classList.add('success');
+        feedback.style.display = 'block';
+        form.reset(); // Clear the form
+      },
+      function(error) {
+        // Log error details
+        console.error('❌ EmailJS Error:', {
+          error: error,
+          timestamp: new Date().toISOString(),
+          sender: email,
+          errorDetails: error.text
+        });
+
+        // Store failed attempt in localStorage
+        try {
+          const failedEmails = JSON.parse(localStorage.getItem('failedEmails') || '[]');
+          failedEmails.push({
+            timestamp: new Date().toISOString(),
+            status: 'failed',
+            error: error.text,
+            sender: email
+          });
+          localStorage.setItem('failedEmails', JSON.stringify(failedEmails));
+        } catch (e) {
+          console.warn('Could not store error log:', e);
+        }
+
+        feedback.textContent = 'Error: ' + (error.text || 'Failed to send message. Please try again.');
+        feedback.classList.add('error');
+        feedback.style.display = 'block';
+      }
+    }).finally(function() {
+      // Re-enable submit button and restore original text
+      submitBtn.disabled = false;
+      submitBtn.querySelector('span').textContent = 'Send Message';
+    });
+  });
+
+  // Function to view email logs (you can call this from browser console)
+  window.viewEmailLogs = function() {
+    const sentEmails = JSON.parse(localStorage.getItem('sentEmails') || '[]');
+    const failedEmails = JSON.parse(localStorage.getItem('failedEmails') || '[]');
+    
+    console.log('📬 Email Sending History:');
+    console.log('------------------------');
+    console.log('✅ Successful Emails:', sentEmails.length);
+    sentEmails.forEach(email => {
+      console.log(`[${email.timestamp}] From: ${email.sender} (ID: ${email.messageId})`);
+    });
+    
+    console.log('\n❌ Failed Emails:', failedEmails.length);
+    failedEmails.forEach(email => {
+      console.log(`[${email.timestamp}] From: ${email.sender}\nError: ${email.error}`);
+    });
+  };
+  // Populate debug panel if present
+  function populateDebugPanel() {
+    const panel = document.getElementById('debug-panel');
+    if (!panel) return;
+
+    const status = document.getElementById('debug-status');
+    const linksEl = document.getElementById('debug-links');
+    const pagesEl = document.getElementById('debug-pages');
+    const actions = document.getElementById('debug-actions');
+
+    status.textContent = 'Script: running';
+
+    const info = window.getNavigationInfo();
+    linksEl.innerHTML = '<strong>Nav links:</strong> ' + info.links.map(l => l.text).join(', ');
+    pagesEl.innerHTML = '<strong>Pages:</strong> ' + info.pages.join(', ');
+
+    // actions: create buttons to activate pages
+    actions.innerHTML = '';
+    info.pages.forEach(p => {
+      const btn = document.createElement('button');
+      btn.textContent = p;
+      btn.addEventListener('click', function() { window.activatePage(p); });
+      actions.appendChild(btn);
+    });
+
+    const refresh = document.getElementById('debug-refresh');
+    const showLogs = document.getElementById('debug-show-logs');
+    if (refresh) refresh.addEventListener('click', populateDebugPanel);
+    if (showLogs) showLogs.addEventListener('click', function() { window.viewEmailLogs && window.viewEmailLogs(); });
+  }
+
+  // Run initially
+  populateDebugPanel();
+
+});
